@@ -10,14 +10,22 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script> 
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('storage/images/Logo_AUF.ico')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ asset('storage/uk_assets/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('storage/uk_assets/css/uikit.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('storage/css/home.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css"/>
+
+    <!-- <link href="{{ asset('storage/css/bootstrap.min.css') }}" rel="stylesheet"> -->
+    <link href="{{ asset('boot/bootstrap.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -79,5 +87,10 @@
             @yield('content')
         </main>
     </div>
+    <script src="{{ asset('storage/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ asset('storage/uk_assets/js/uikit.min.js') }}"></script>
+    <script src="{{ asset('storage/uk_assets/js/uikit-icons.min.js ')}}"></script>
 </body>
+
 </html>
