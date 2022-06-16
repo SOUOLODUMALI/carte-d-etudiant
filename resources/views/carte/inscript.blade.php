@@ -71,7 +71,7 @@
     <div class=" formulaire">
         <img src="{{asset('images/esi.jpg')}}" alt="logo">
     </div>
-    <div class="na">INSCRIPTION DE L'ETUDIANT
+    <div class="na">INSCRIPTION DE LA SECRETAIRE
     </div>
     <div class="deux"></div>
     <div class="container">
@@ -80,23 +80,23 @@
         <div class="tout">
         @csrf
             <!-- <legend for="" >nom</legend> -->
-            <input type="text" name="nom" class="mal" placeholder="matricule"> <br> <br>
+            <input type="text" name="matricule" class="mal" placeholder="matricule"> <br> <br>
             <!-- <legend for=""> prenom</legend> -->
-            <!-- <legend for="" >nom</legend> -->
-            <input type="text" name="nom" class="mal" placeholder="nom"> <br> <br>
-            <!-- <legend for=""> prenom</legend> -->
-            <input type="text" name="prenom" class="mal" placeholder="prenom"> <br> 
+            <input type="text" name="nom" class="mal" placeholder="nom"> <br> 
             <br>
+            <!-- <legend for="">email</legend> -->
+            <input type="text" name="prenom" class="mal" placeholder="prenom"> <br> <br>
+            <!-- <legend for=""></legend> -->
             <!-- <legend for="">email</legend> -->
             <input type="email" name="email" class="mal" placeholder="email"> <br> <br>
-            <!-- <legend for=""> mot de pass</legend> -->
-            <input type="password" name="mot de pass" class="mal" placeholder="password"> <br> 
+            <!-- <legend for=""></legend> -->
+            <input type="text" name="niveau d'etude" class="mal" placeholder="niveau d'etude"> <br> <br>
+              <!-- <legend for=""> photo</legend> -->
+              <input type="date" name="annee universitaire" class="mal" placeholder="annee univeristaire"> <br> 
             <br>
-            <!-- <legend for="">email</legend> -->
-            <input type="password" name="confirmer mot pass" class="mal" placeholder="cpassword"> <br> <br>
-            <!-- <legend for=""> mot_de_pass</legend>
-            <input type="text" name="mot_de_pass" class="mal" placeholder="nom"> <br> 
-            <br> -->
+            <legend for=""> </legend>
+            <input type="file" name="photo" class="mal" placeholder="photo"> <br> 
+            <br>
             <button type="submit " class="btn btn-warning " placeholder="nom">Envoyer<button>
             
             </div>

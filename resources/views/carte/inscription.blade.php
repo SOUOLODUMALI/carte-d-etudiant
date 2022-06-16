@@ -71,17 +71,14 @@
     <div class=" formulaire">
         <img src="{{asset('images/esi.jpg')}}" alt="logo">
     </div>
-    <div class="na">INSCRIPTION DE L'ETUDIANT
+    <div class="na">INSCRIPTION DE L'ADMINISTRATEUR  
     </div>
     <div class="deux"></div>
     <div class="container">
         <div class="col">
-        <form action="" method="post">
+        <form  method="post" action="{{ route('carte') }}">
         <div class="tout">
         @csrf
-            <!-- <legend for="" >nom</legend> -->
-            <input type="text" name="nom" class="mal" placeholder="matricule"> <br> <br>
-            <!-- <legend for=""> prenom</legend> -->
             <!-- <legend for="" >nom</legend> -->
             <input type="text" name="nom" class="mal" placeholder="nom"> <br> <br>
             <!-- <legend for=""> prenom</legend> -->
@@ -89,6 +86,10 @@
             <br>
             <!-- <legend for="">email</legend> -->
             <input type="email" name="email" class="mal" placeholder="email"> <br> <br>
+    
+            <!-- <legend for="">email</legend> -->
+            <input type="text" name="role" class="mal" placeholder="role"> <br> <br>
+    
             <!-- <legend for=""> mot de pass</legend> -->
             <input type="password" name="mot de pass" class="mal" placeholder="password"> <br> 
             <br>
