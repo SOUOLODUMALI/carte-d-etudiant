@@ -12,7 +12,7 @@
     border-radius:9px;
     text-align:center;
     font-size:3em;
-    background-color:yellow;
+    background-color:#FDEF75;
     color:black; 
     margin-left:15%;
     }
@@ -20,7 +20,7 @@
     font-size:3em;
     text-align:center;
     justify-content:center;
-    background-color:yellow;
+    background-color:#FDEF75;
     border-radius:30%;
     padding:5%;
    }
@@ -56,7 +56,20 @@
                             <!-- <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label> -->
 
                             <div class="col-md-6">
-                                <input id="prenom" type="text" class="form-control @error('prenom') is-invalid @enderror" placeholder="prenom" name="prenom" value="{{ old('prenom') }}" required autocomplete="name" autofocus>
+                                <input id="prenom" type="text" class="form-control @error('prenom') is-invalid @enderror" placeholder="prenom" name="prenom" value="{{ old('prenom') }}" required autocomplete="prenom" autofocus>
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <!-- <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label> -->
+
+                            <div class="col-md-6">
+                                <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" placeholder="role" name="role" value="{{ old('role') }}" required autocomplete="role" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">

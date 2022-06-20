@@ -18,7 +18,9 @@
     <div class="whit">
         <div class="inputt">
 
-      <h2>NEXT ></h2>
+      <h2>
+      <a href="{{route('Etud.create')}}">NEXT ></a>
+      </h2>
         </div>
 
 </div>
@@ -31,7 +33,7 @@
 
     }
     .color{
-background-color:red;
+background-color:#0bd4b6;
  height:300px;
  max-width:100%;
 
@@ -56,13 +58,13 @@ background-color:red;
  height:100px;
  max-width:100%;
     }
-    .inputt{border:2px solid yellow;
+    .inputt{border:2px solid #FDEF75;
         height:80px;
         width:40%;     
         justify-conent:center;
         margin-top:80px;
         margin-left:30%;
-        background-color:yellow;
+        background-color:#FDEF75;
     }
     h2{
         font-size:2em ;

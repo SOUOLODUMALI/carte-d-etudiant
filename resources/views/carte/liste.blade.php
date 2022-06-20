@@ -1,110 +1,138 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @extends('layouts.app')
+
 @section('content')
-<div class='container-fluid corps'>
-    <div class='row justify-content-evenly mt-5'>
-        <div class='col-md-4   col-sm-4 ms-1  text-light text-center  '>
-           <h1 class="demand">GESTION</h1>
-        </div>
-        {{-- <div class='col-4 text-center d-flex col-sm-4'>
-                <h3 class="bg-warning rond"><br> abonné(s)</h3>
-        </div> --}}
-    </div>
+
+<style>
+  *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+   
+}
+header{
+    color: #fff;
+    background-color: rgb(170, 3, 3);
+    border: 1px solid black;
+    float: 50%;
+     height: 100px; 
+    width: 100%;
+}
+h3{
+    text-align: center;
+    padding-top: 2%;
+    contain: content ;
+    font-size: 2em;
     
-    <div class='row '>
-       
-        <div class='col table'>
-        <div class='container'>
-        <div class='row'>
-            <div class='col-md-12'>
-                <div class='card'>
-                    <div class='card-header'>
-                        <h3 class='card-title'>Liste des Abonnés</h3>
-                    <div class='table-responsive'>
-                        <table class='table no-wrap user-table mb-0'>
-                        <thead class="bg-secondary text-white">
-                            <tr>
-                            <th scope='col' class='border-0 text-uppercase font-medium pl-4'>#</th>
-                            <th scope='col' class='border-0 text-uppercase font-medium'>Nom complet </th>
-                            <th scope='col' class='border-0 text-uppercase font-medium'>D_naissance</th>
-                            <th scope='col' class='border-0 text-uppercase font-medium text-center'>Email</th>
-                            <th scope='col' class='border-0 text-uppercase font-medium'>Numero</th>
-                            <th scope='col' class='border-0 text-uppercase font-medium'>D_abon</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @php 
-                                $i=1;
-                            @endphp
+}
 
-                            @foreach($etudiants as $etudiant)
-                             <tr class='ligne' id ='{{$etudiant->id}}'>
+.retour{
+    font-size: 2em;
+    color:rgb(115, 10, 10);
+    margin-left: 900px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+.bien{
+    color:rgb(190, 11, 11);
+    font-size: 2em;
+}
 
-                                    <td class='pl-4 '>{{$i}}</td>
-                                    <td>
-                                        <h5 class='font-medium mb-0'>{{$etudiant->nom
-                                        
-                                        }} {{$etudiant->prenom}}</h5>
-                                        <span class='text-muted'></span>
-                                    </td>
-                                    <td>
-                                        <span class='text-muted'>{{
-                                            $etudiant->date_naissance
-                                            }}</span><br>
-                                        <span class='text-muted'></span>
-                                    </td>
-                                    <td>
-                                        <span class='text-muted'>{{
-                                            $etudiant->email
-                                            }}</span>
-                                        <span class='text-muted'></span>
-                                    </td>
-                                    <td>
-                                        <span class='text-muted'>{{
-                                            $etudiant->telephone
-                                            }}</span><br>
-                                        <span class='text-muted'></span>
-                                    </td>
-                                    
-                                        <td>
-                                            <span class='text-muted'>
-                                            {{
-                                                $etudiant->date_abonne
-                                            }}
-                                            
-                                            </span><br>
-                                            <span class='text-muted'></span>
-                                        </td>
-                                    
-                                    <td>
-                                        
+ a{
+    text-decoration: none;   
+}
+.table caption-top{
+    color: rgb(196, 24, 24)!important;
+}
+h2{
+    color:rgb(27, 17, 2);
+    text-align: center;
+    margin-top: 50px;
+   
+}
+</style>
+
+
+
+
+
+     <div class="bien"> 
+
+
+
+  <h2 class="abonne">La liste des Etudiants </h2>
+ 
+<img src="{{asset('images/esi.jpg')}}" alt="logo">
+ 
+
+
+
+
+
+
+
+<div class="table-responsive">
+    
+    <table class="table caption-top">
+        <thead>
+        <tr class="table-dark">
+         
+          <th scope="col">matricule</th>
+          <th scope="col">nom</th>
+          <th scope="col">prenom</th>
+          <th scope="col">cycle</th>
+          <th scope="col">niveau</th>
+          <th scope="col">email</th>
+          <th scope="col">photo</th>
+          <th scope="col">annee_accademique</th>
+        </tr>
+      </thead>
+
+        @foreach($etuds as $etud)
+            <tr>
+    
+            <td>{{$etud->matricule}}</td> 
+            <td>{{$etud->nom}}</td> 
+            <td>{{$etud->prenom}}</td>  
+            <td>{{$etud->cycle}}</td>
+            <td>{{$etud->niveau}}</td>
+            <td>{{$etud->email }}</td>
+            <td>{{$etud->photo}}</td>
+            <td>{{$etud->annee_accademique}}</td>
+
+             <!-- <td>
+                              
                                         <button type='button'
-                                        value="{{$etudiant->id}}"
-                                        class='btn delete btn-outline-info btn-circle btn-lg btn-circle ml-2'><i class='fa fa-trash text-danger'></i></button> 
-                                        <a href={{
-                                            route('edit',['id'=>$etudiant->id])
+                                        value="{{$etuds->id}}"
+                                        class='btn delete btn-outline-info btn-circle btn-lg btn-circle ml-2'>suprimer</button> 
+                                         <a href={{
+                                            route('edit',['id'=>$etuds->id])
                                         
-                                        }}  >
-                                        <button type='button' class='btn  btn-outline-info btn-circle btn-lg btn-circle ml-2'><i class='fa fa-edit'></i> </button></a>
-                                    </td>
-                                    </tr>
-                                    @php 
-                                        $i++;
-                                    @endphp
-                                    @endforeach
-                        </tbody>
-                        </table>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                                        }}  
+                                        <button type='button' class='btn  btn-outline-info btn-circle btn-lg btn-circle ml-2'>modifier </button></a>
+                                    </td>   -->
+
+          </tr>
+       @endforeach
+        </tbody>
+    </table>
+</div>
 </div>
 
-<div class='row justify-content-center'>
-    <div class='col-md-3 col-sm-4'>
-        <a href={{route('inscription.index')}}><button type='button' class='btn btn-outline-info btn-circle btn-lg btn-circle ml-2'><i class='fa fa-plus'></i> AJOUTER UN ABONNE</button></a>
-    </div>
-</div>
-</div>
+    
+    
 @endsection
+

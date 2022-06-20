@@ -14,7 +14,11 @@ class EtudController extends Controller
      */
     public function index()
     {
-        //
+        
+       $etuds = Etud::all();
+
+           return view('carte.liste' , compact('etuds'));
+           
     }
 
     /**
@@ -24,7 +28,7 @@ class EtudController extends Controller
      */
     public function create()
     {
-        //
+        return view('carte.Etud');
     }
 
     /**
@@ -35,7 +39,35 @@ class EtudController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    
+        $this->validate($request, [
+            "matricule" => "bail|required|string|max:200",
+            "nom" => "bail|required|string|max:200",
+            "prenom" => "bail|required|string|max:256",
+            "cycle" => "bail|required|string|max:256",
+            "niveau" => "bail|required|string|max:256",
+            "email" => "bail|required|string|unique:Etud|max:256",
+            "photo" => "bail|image|required|max:1024",
+            "annee_accademique" => "bail|required|date",
+
+        ]);
+        $img_path = $request->photo->store("etuds");
+        Etud::create(
+            [
+                "matricule" => $request->matricule,
+                "nom" => $request->nom,
+                "prenom" => $request->prenom,
+                "cycle" => $request->cycle,
+                "niveau" => $request->niveau,
+                "email" => $request->email,
+                "photo" =>  $img_path,
+                "annee_accademique" => $request->annee_accademique,
+
+            ]
+        );
+
+        return redirect(route("Etud.store"));
+    
     }
 
     /**

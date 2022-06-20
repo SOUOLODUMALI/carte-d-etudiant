@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Etud extends Model
 {
     use HasFactory;
+    protected $fillable  = [
+        "matricule",
+        "nom",
+        "prenom",
+        "cycle",
+        "nivau",
+        "email",
+        "photo",
+        "annee_accademique",
+    ];
 }

@@ -6,7 +6,7 @@
     border-radius:9px;
     text-align:center;
     font-size:3em;
-    background-color:yellow;
+    background-color:#FDEF75;
     color:black;
    }
 
@@ -14,7 +14,7 @@
     font-size:3em;
     text-align:center;
     justify-content:center;
-    background-color:yellow;
+    background-color:#FDEF75;
     border-radius:30%;
     padding:5%;
    }
