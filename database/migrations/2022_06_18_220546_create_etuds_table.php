@@ -13,9 +13,10 @@ class CreateEtudsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Etud', function (Blueprint $table) {
+        Schema::create('etuds', function (Blueprint $table) {
             $table->id();
             $table->string('matricule');
+            $table->string('nom');
             $table->string('prenom');
             $table->string('cycle');
             $table->string('niveau');
@@ -33,6 +34,6 @@ class CreateEtudsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Etud');
+        Schema::dropIfExists('etuds');
     }
 }

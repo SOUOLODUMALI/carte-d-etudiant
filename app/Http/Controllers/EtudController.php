@@ -46,12 +46,12 @@ class EtudController extends Controller
             "prenom" => "bail|required|string|max:256",
             "cycle" => "bail|required|string|max:256",
             "niveau" => "bail|required|string|max:256",
-            "email" => "bail|required|string|unique:Etud|max:256",
-            "photo" => "bail|image|required|max:1024",
+            "email" => "bail|required|string|unique:etuds|max:256",
+            "photo" => "bail|required|max:1024",
             "annee_accademique" => "bail|required|date",
 
         ]);
-        $img_path = $request->photo->store("etuds");
+        // $img_path = $request->photo->store("etuds");
         Etud::create(
             [
                 "matricule" => $request->matricule,
@@ -60,13 +60,13 @@ class EtudController extends Controller
                 "cycle" => $request->cycle,
                 "niveau" => $request->niveau,
                 "email" => $request->email,
-                "photo" =>  $img_path,
+                "photo" =>  $request->photo,
                 "annee_accademique" => $request->annee_accademique,
 
             ]
         );
 
-        return redirect(route("Etud.store"));
+        return redirect(route("Etud.create"));
     
     }
 
@@ -89,7 +89,7 @@ class EtudController extends Controller
      */
     public function edit(Etud $etud)
     {
-        //
+        return view("carte/Etud", compact("etuds"));
     }
 
     /**
@@ -101,7 +101,42 @@ class EtudController extends Controller
      */
     public function update(Request $request, Etud $etud)
     {
-        //
+       
+    
+            $rules = [
+                "matricule" => "bail|required|string|max:200",
+            "nom" => "bail|required|string|max:200",
+            "prenom" => "bail|required|string|max:256",
+            "cycle" => "bail|required|string|max:256",
+            "niveau" => "bail|required|string|max:256",
+            "email" => "bail|required|string|unique:etuds|max:256",
+            "photo" => "bail|required|max:1024",
+            "annee_accademique" => "bail|required|date",
+  
+            ];
+    
+            if ($request->has("photo")) {
+                $rules["photo"] = "bail|image|required|max:1024";
+            }
+            $this->validate($request, $rules);
+            if ($request->has("photo")) {
+                Storage::delete($etuds->photo);
+                $img_path = $request->photo->store("etuds");
+            }
+            $abonne->update(
+                [
+                    "matricule" => $request->matricule,
+                    "nom" => $request->nom,
+                    "prenom" => $request->prenom,
+                    "cycle" => $request->cycle,
+                    "niveau" => $request->niveau,
+                    "email" => $request->email,
+                    "photo" =>  $request->photo,
+                    "annee_accademique" => $request->annee_accademique,   
+                ]
+            );
+            return redirect(route("Etud.create"));
+        }
     }
 
     /**

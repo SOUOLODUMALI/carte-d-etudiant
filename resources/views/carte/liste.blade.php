@@ -101,29 +101,26 @@ h2{
         </tr>
       </thead>
 
-        @foreach($etuds as $etud)
+        @foreach($etuds as $etuds)
             <tr>
     
-            <td>{{$etud->matricule}}</td> 
-            <td>{{$etud->nom}}</td> 
-            <td>{{$etud->prenom}}</td>  
-            <td>{{$etud->cycle}}</td>
-            <td>{{$etud->niveau}}</td>
-            <td>{{$etud->email }}</td>
-            <td>{{$etud->photo}}</td>
-            <td>{{$etud->annee_accademique}}</td>
+            <td>{{$etuds->matricule}}</td> 
+            <td>{{$etuds->nom}}</td> 
+            <td>{{$etuds->prenom}}</td>  
+            <td>{{$etuds->cycle}}</td>
+            <td>{{$etuds->niveau}}</td>
+            <td>{{$etuds->email }}</td>
+            <td>{{$etuds->photo}}</td>
+            <td>{{$etuds->annee_accademique}}</td>
 
-             <!-- <td>
+              <td>
                               
                                         <button type='button'
                                         value="{{$etuds->id}}"
                                         class='btn delete btn-outline-info btn-circle btn-lg btn-circle ml-2'>suprimer</button> 
-                                         <a href={{
-                                            route('edit',['id'=>$etuds->id])
-                                        
-                                        }}  
+                                         
                                         <button type='button' class='btn  btn-outline-info btn-circle btn-lg btn-circle ml-2'>modifier </button></a>
-                                    </td>   -->
+                                    </td>   
 
           </tr>
        @endforeach

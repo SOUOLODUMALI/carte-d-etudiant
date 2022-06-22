@@ -17,7 +17,7 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', function () {
-    return view('carte/accueil');
+    return view('carte/piece');
 });
 
 Auth::routes();

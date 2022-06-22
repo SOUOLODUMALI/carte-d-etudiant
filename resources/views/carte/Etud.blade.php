@@ -76,8 +76,16 @@
     <div class="deux"></div>
     <div class="container">
         <div class="col">
-        <form action="{{route('Etud.store')}}" method="post">
+        <!-- <form action="{{route('Etud.store')}}" method="post"> -->
         <div class="tout">
+
+
+        @if (isset($etuds))
+    <form action="{{ route('Etud.update') }}" method="POST" >
+        @method("PUT")
+        @else
+        <form action="{{ route('Etud.store') }}" method="POST">
+            @endif
         @csrf
             <!-- <legend for="" >nom</legend> -->
             <input type="text" name="matricule" class="mal" placeholder="matricule"> <br> <br>

@@ -13,7 +13,7 @@ class Etud extends Model
         "nom",
         "prenom",
         "cycle",
-        "nivau",
+        "niveau",
         "email",
         "photo",
         "annee_accademique",
