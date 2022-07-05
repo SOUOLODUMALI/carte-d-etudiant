@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mail\Message;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('carte.accueil');
     }
+    public function build()
+    {
+Mail::to('bedjick@gmail.com')->send(new Message());
+        return $this->subject('Disponibilite de Carte Etudiant')
+            ->view('mail.mail-sender');
+    }
+   
+
 }

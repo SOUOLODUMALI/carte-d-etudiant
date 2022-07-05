@@ -24,8 +24,8 @@
     <link rel="stylesheet" href="{{ asset('storage/css/home.css') }}">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css"/>
 
-    <!-- <link href="{{ asset('storage/css/bootstrap.min.css') }}" rel="stylesheet"> -->
-    <link href="{{ asset('boot/bootstrap.min.css') }}" rel="stylesheet">
+      <link href="{{ asset('storage/css/bootstrap.min.css') }}" rel="stylesheet">  
+    <link href="{{ asset('folder/bootstrap.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">

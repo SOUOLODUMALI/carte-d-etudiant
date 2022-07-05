@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="">
 <style>
     img{
     margin-left:45% !important;

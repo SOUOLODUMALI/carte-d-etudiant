@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\EtudController;
+use App\Http\Controllers\MessageController;
+
+use App\Http\Controllers\EtudiantController;
+
 use App\Http\Controllers\HomeController;
 
 /*
@@ -17,16 +20,19 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', function () {
-    return view('carte/piece');
+    return view('carte.accueil');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/send_mail', [HomeController::class, "build"])->name("send_mail")->middleware(['auth']);
 
 
 
-Route::resource('Etud', EtudController::class);
+
+Route::resource('Etudiant', EtudiantController::class);
+
 
 
 
